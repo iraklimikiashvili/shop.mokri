@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(self)">
+<meta name="robots" content="index, follow">
+<meta name="description" content="YubiKey უსაფრთხოების გასაღებები და Ugreen აქსესუარები — ორიგინალი, გარანტიით. სწრაფი მიწოდება საქართველოში.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://shop.mokri.ge/">
+<title>MOKRI SHOP — YubiKey & Ugreen საქართველოში</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+Georgian:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --bg: #0A1728;
+    --bg2: #0d1e35;
+    --bg3: #0f2240;
+    --navy: #1A3B6C;
+    --blue: #4D9BFD;
+    --blue-dim: rgba(77,155,253,0.15);
+    --blue-glow: rgba(77,155,253,0.35);
+    --white: #FEFEFE;
+    --white-dim: rgba(254,254,254,0.65);
+    --white-faint: rgba(254,254,254,0.08);
+    --border: rgba(77,155,253,0.2);
+    --accent: #FF9500;
+    --success: #25d366;
+    --error: #FF5A5A;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'EB Garamond', Georgia, serif;
+    overflow-x: hidden;
+    line-height: 1.7;
+    padding-top: 68px;
+  }
+
+  body.nav-open { overflow: hidden; }
+
+  :focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  :focus:not(:focus-visible) { outline: none; }
+
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events:none; z-index:0; opacity:.35;
+  }
+
+  /* ——— HEADER ——— */
+  .lang-bar {
+    position: fixed; top:0; right:0; left:0; z-index:1000;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 0 36px;
+    height: 68px;
+    background: rgba(10,23,40,0.95);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .lang-bar-logo-wrap { display:flex; align-items:center; gap:10px; }
+  .lang-bar-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: 6px;
+    color: var(--white);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+  }
+  .lang-bar-logo:hover { opacity: 0.8; }
+  .lang-bar-logo span { color: var(--blue); }
+  .shop-badge {
+    font-family:'Orbitron',sans-serif; font-size:9px; font-weight:700;
+    letter-spacing:2px; color:var(--accent);
+    border:1px solid rgba(255,149,0,0.45);
+    background:rgba(255,149,0,0.1);
+    border-radius:4px; padding:3px 7px;
+    text-transform:uppercase; white-space:nowrap;
+  }
+
+  .header-nav {
+    display: flex; justify-content: center;
+    align-items: center; gap: 4px;
+  }
+
+  .header-nav-link {
+    position: relative; padding: 7px 14px;
+    font-family: 'Noto Sans Georgian', sans-serif;
+    font-size: 12.5px; font-weight: 600;
+    letter-spacing: 0.3px;
+    color: rgba(254,254,254,0.7);
+    text-decoration: none; border-radius: 6px;
+    transition: all 0.22s ease; white-space: nowrap;
+  }
+  .header-nav-link::after {
+    content:''; position:absolute; bottom:3px; left:50%;
+    transform: translateX(-50%) scaleX(0);
+    width:60%; height:1.5px; background: var(--blue);
+    border-radius:2px; transition: transform 0.22s ease;
+  }
+  .header-nav-link:hover { color:var(--white); background:rgba(77,155,253,0.08); }
+  .header-nav-link:hover::after { transform: translateX(-50%) scaleX(1); }
+  .header-nav-link.active { color:var(--blue); background:rgba(77,155,253,0.1); }
+  .header-nav-link.active::after { transform: translateX(-50%) scaleX(1); }
+
+  .header-nav-link.back-link {
+    color:var(--blue); background:rgba(77,155,253,0.16); border:1px solid rgba(77,155,253,0.55);
+    margin-right:8px; font-size:11.5px; letter-spacing:0.6px; font-weight:700;
+  }
+  .header-nav-link.back-link:hover { background:var(--blue); color:var(--bg); box-shadow:0 0 18px var(--blue-glow); }
+  .header-nav-link.back-link::after { display:none; }
+
+  .nav-cart {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px;
+    margin-left: 6px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    color: var(--white);
+    transition: border-color 0.22s, background 0.22s, color 0.22s;
+    flex-shrink: 0;
+  }
+  .nav-cart:hover { border-color:var(--blue); color:var(--blue); background:rgba(77,155,253,0.08); }
+  .nav-cart svg { width:18px; height:18px; }
+  .nav-cart-badge {
+    position: absolute; top: -6px; right: -6px;
+    min-width: 18px; height: 18px; padding: 0 4px;
+    border-radius: 9px;
+    background: var(--accent);
+    color: var(--bg);
+    font-family:'Orbitron',sans-serif; font-size:10px; font-weight:700;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transform: scale(0.6);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .nav-cart-badge.show { opacity: 1; transform: scale(1); }
+
+  .lang-switcher {
+    display:flex; gap:4px;
+    background:var(--white-faint); border:1px solid var(--border);
+    border-radius:6px; padding:3px;
+  }
+  .lang-btn {
+    padding:5px 13px;
+    font-family:'Orbitron',sans-serif; font-size:9.5px; font-weight:700;
+    letter-spacing:2px; border:none; background:transparent;
+    color:var(--white-dim); border-radius:4px; cursor:pointer; transition:all 0.25s;
+  }
+  .lang-btn.active { background:var(--blue); color:var(--bg); }
+
+  .header-right { display:flex; align-items:center; gap:10px; }
+
+  .nav-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--white);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .nav-toggle:hover { background: rgba(77,155,253,0.1); border-color: var(--blue); }
+  .nav-toggle svg { width: 20px; height: 20px; }
+  .nav-toggle .icon-close { display: none; }
+  .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
+  .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+  @media(max-width:900px) {
+    .lang-bar { grid-template-columns: auto 1fr auto auto; }
+    .header-nav {
+      position: fixed;
+      top: 68px; left: 0; right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 4px;
+      padding: 16px 20px 24px;
+      background: rgba(10,23,40,0.98);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      max-height: calc(100dvh - 68px);
+      overflow-y: auto;
+      z-index: 999;
+    }
+    .lang-bar.is-open .header-nav { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .header-nav-link { padding: 12px 14px; font-size: 14px; text-align: left; border-radius: 8px; }
+    .header-nav-link::after { display: none; }
+    .header-nav-link.back-link { margin-right:0; margin-bottom:6px; text-align:center; }
+    .nav-toggle { display: inline-flex; }
+    .nav-backdrop {
+      position: fixed; inset: 68px 0 0 0;
+      background: rgba(0,0,0,0.5);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease; z-index: 998;
+    }
+    .lang-bar.is-open ~ .nav-backdrop { opacity: 1; pointer-events: auto; }
+  }
+
+  @media(max-width:480px) {
+    .lang-bar { padding: 0 14px; gap: 8px; }
+    .lang-bar-logo { font-size: 20px; letter-spacing: 4px; }
+    .shop-badge { font-size:8px; padding:2px 5px; letter-spacing:1.4px; }
+    .lang-btn { padding: 5px 9px; font-size: 9px; letter-spacing: 1.4px; }
+  }
+
+  /* ——— SECTION HEADERS ——— */
+  .section-eyebrow {
+    font-family:'Orbitron',sans-serif; font-size:12px;
+    font-weight:700; letter-spacing:4px; color:var(--blue);
+    text-transform:uppercase; margin-bottom:16px;
+    display:flex; align-items:center; gap:12px;
+    justify-content:center;
+  }
+  .section-eyebrow::before { content:''; width:32px; height:1px; background:var(--blue); }
+  .section-eyebrow::after  { content:''; width:32px; height:1px; background:var(--blue); }
+
+  .section-title {
+    font-family:'Orbitron',sans-serif; font-weight:900;
+    font-size:clamp(20px, 2.8vw, 32px); letter-spacing:2px;
+    margin-bottom:48px; line-height:1.2;
+    text-align:center;
+    text-shadow: 0 0 20px rgba(77,155,253,0.14), 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .section-title > span { color:var(--white); }
+  .section-title > span > span { color:var(--blue); text-shadow: 0 0 12px rgba(77,155,253,0.4); }
+
+  /* ——— BUTTONS ——— */
+  .btn-primary {
+    position:relative;
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:14px 32px; background:var(--accent); color:var(--bg);
+    font-family:'Orbitron',sans-serif; font-size:9px;
+    font-weight:700; letter-spacing:2px; border-radius:6px;
+    text-decoration:none; border:1px solid var(--accent);
+    overflow:hidden; isolation:isolate; cursor:pointer;
+    box-shadow:0 0 0 0 rgba(255,149,0,0);
+    transition: box-shadow 0.5s cubic-bezier(0.32,0.72,0,1), transform 0.25s cubic-bezier(0.22,1,0.36,1);
+  }
+  .btn-primary::before {
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,0.5) 50%, transparent 75%);
+    transform: translateX(-110%);
+    transition: transform 0.7s cubic-bezier(0.32,0.72,0,1);
+    pointer-events:none; z-index:0;
+  }
+  .btn-primary > svg, .btn-primary > span {
+    position:relative; z-index:1;
+    transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .btn-primary:hover { box-shadow:0 0 24px rgba(255,149,0,0.55), 0 0 0 3px rgba(255,149,0,0.14); }
+  .btn-primary:hover::before { transform: translateX(110%); }
+  .btn-primary:active { transform: scale(0.96); }
+  .btn-primary:disabled { opacity:0.5; cursor:not-allowed; }
+  .btn-primary.full { width:100%; }
+
+  .btn-outline {
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:14px 32px; background:transparent; color:var(--white);
+    font-family:'Orbitron',sans-serif; font-size:9px;
+    font-weight:700; letter-spacing:2px; border:1px solid var(--border);
+    border-radius:6px; text-decoration:none; transition:all 0.25s;
+    cursor:pointer;
+  }
+  .btn-outline:hover { border-color:var(--blue); color:var(--blue); }
+  .btn-outline.full { width:100%; }
+
+  /* ——— GLOW CARD (shared hover treatment) ——— */
+  .glow-card {
+    position:relative; overflow:hidden; isolation:isolate;
+    background: linear-gradient(145deg, rgba(77,155,253,0.08) 0%, rgba(254,254,254,0.03) 100%);
+    border:1px solid var(--border);
+    border-top:2px solid rgba(77,155,253,0.35);
+    border-radius:14px;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .glow-card::after {
+    content:''; position:absolute; inset:0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(77,155,253,0.14), transparent 70%);
+    opacity:0; transition: opacity 0.5s ease; pointer-events:none; z-index:-1;
+  }
+  .glow-card:hover {
+    border-color:rgba(77,155,253,0.55);
+    border-top-color:var(--blue);
+    box-shadow:0 10px 40px rgba(77,155,253,0.14);
+    transform:translateY(-4px);
+  }
+  .glow-card:hover::after { opacity:1; }
+
+  /* ——— FORM FIELDS ——— */
+  .field-label { font-family:'Orbitron',sans-serif; font-size:10px; font-weight:700; letter-spacing:1.5px; color:var(--blue); text-transform:uppercase; margin-bottom:8px; display:block; }
+  .field { width:100%; padding:14px 16px; background:var(--white-faint); border:1px solid var(--border); border-radius:8px; color:var(--white); font-family:'Noto Sans Georgian',sans-serif; font-size:14px; transition:border-color 0.22s, background 0.22s; }
+  .field::placeholder { color:rgba(254,254,254,0.35); }
+  .field:focus { outline:none; border-color:var(--blue); background:rgba(77,155,253,0.05); }
+  .field.error { border-color:var(--error); }
+  .form-error { font-size:12px; color:var(--error); margin-top:4px; min-height:16px; display:none; }
+  .form-error.active { display:block; }
+
+  /* ——— PRICE ——— */
+  .price {
+    font-family:'EB Garamond', Georgia, 'Noto Sans', Arial, sans-serif;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .price-old {
+    font-family:'EB Garamond', Georgia, 'Noto Sans', Arial, sans-serif;
+    color: var(--white-dim);
+    text-decoration: line-through;
+    font-size: 0.8em;
+    margin-right: 8px;
+  }
+
+  [data-lang] { display:none; }
+  [data-lang].active { display:block; }
+  span[data-lang].active { display:inline; }
+
+  /* ——— FOOTER ——— */
+  footer {
+    background: rgba(0,0,0,0.4);
+    border-top: 1px solid var(--border);
+    padding: 28px 40px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .footer-payments {
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center;
+  }
+  .footer-payment-badge {
+    font-family:'Noto Sans Georgian',sans-serif; font-size:11px; font-weight:600;
+    color: var(--white-dim);
+    border:1px solid var(--border); border-radius:6px;
+    padding:5px 10px;
+    display:flex; align-items:center; gap:6px;
+  }
+  .footer-payment-badge svg { width:14px; height:14px; opacity:0.8; }
+  .footer-copy { font-size: 11px; color: var(--white-dim); opacity: 0.5; margin: 0; text-align: center; }
+  .footer-social { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 4px 0; }
+  .footer-social a {
+    display: flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid var(--border);
+    color: var(--white-dim);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    text-decoration: none;
+  }
+  .footer-social a:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .footer-social svg { width: 17px; height: 17px; fill: currentColor; }
+
+  /* ——— FLOATING CONTACT BUTTONS ——— */
+  .float-btn {
+    position: fixed;
+    right: 32px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    text-decoration: none;
+    background: rgba(26,59,108,0.55);
+    border: 1px solid rgba(77,155,253,0.3);
+    backdrop-filter: blur(8px) saturate(140%);
+    -webkit-backdrop-filter: blur(8px) saturate(140%);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+    color: var(--blue);
+    transition: transform 0.25s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  }
+  .float-btn:hover { transform: scale(1.1); color: #FEFEFE; }
+  .float-btn svg { fill: currentColor; transition: fill 0.3s ease; }
+
+  .call-float { bottom: 248px; }
+  .call-float:hover { background: #FF9500; border-color: #FF9500; box-shadow: 0 8px 32px rgba(255,149,0,0.55); }
+  .call-float svg { width: 28px; height: 28px; }
+
+  .wa-float { bottom: 176px; }
+  .wa-float:hover { background: #25d366; border-color: #25d366; box-shadow: 0 8px 32px rgba(37,211,102,0.55); }
+  .wa-float svg { width: 30px; height: 30px; }
+
+  .msng-float { bottom: 104px; }
+  .msng-float:hover { background: #0084FF; border-color: #0084FF; box-shadow: 0 8px 32px rgba(0,132,255,0.55); }
+  .msng-float svg { width: 28px; height: 28px; }
+
+  .email-float { bottom: 32px; }
+  .email-float:hover { background: #4D9BFD; border-color: #4D9BFD; box-shadow: 0 8px 32px rgba(77,155,253,0.55); }
+  .email-float svg { width: 28px; height: 28px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .float-btn, .glow-card, .btn-primary { transition: none; }
+  }
+  @media (max-width: 660px) {
+    .float-btn { width: 50px; height: 50px; right: 16px; }
+    .wa-float { bottom: 138px; }
+    .msng-float { bottom: 78px; }
+    .email-float { bottom: 18px; }
+    .call-float { bottom: 198px; }
+    .wa-float svg { width: 26px; height: 26px; }
+    .msng-float svg, .email-float svg, .call-float svg { width: 24px; height: 24px; }
+  }
+  @media (max-height: 600px) {
+    .float-btn { width: 44px; height: 44px; }
+    .wa-float { bottom: 116px; }
+    .msng-float { bottom: 64px; }
+    .email-float { bottom: 12px; }
+    .call-float { bottom: 168px; }
+    .wa-float svg { width: 22px; height: 22px; }
+    .msng-float svg, .email-float svg, .call-float svg { width: 20px; height: 20px; }
+  }
+
+
+  /* ——— HERO ——— */
+  .hero {
+    position:relative; min-height:44vh;
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+    text-align:center;
+    padding: 80px 80px 56px;
+    overflow:hidden;
+  }
+  .hero::before {
+    content:'';
+    position:absolute; inset:0;
+    background:
+      linear-gradient(rgba(77,155,253,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(77,155,253,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-glow {
+    position:absolute; width:700px; height:460px;
+    background: radial-gradient(ellipse, rgba(77,155,253,0.1) 0%, transparent 65%);
+    top:50%; right:-100px; transform:translateY(-50%);
+    pointer-events:none;
+  }
+  .hero-eyebrow {
+    position:relative;
+    font-family:'Orbitron',sans-serif; font-size:12px;
+    font-weight:700; letter-spacing:4px; color:var(--blue);
+    text-transform:uppercase; margin-bottom:20px;
+    display:flex; align-items:center; gap:12px;
+    justify-content:center;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after { content:''; width:32px; height:1px; background:var(--blue); }
+  .hero-title {
+    position:relative;
+    font-family:'Orbitron',sans-serif; font-weight:900;
+    font-size: clamp(24px, 3.6vw, 44px);
+    letter-spacing:2px; line-height:1.15;
+    margin-bottom:22px;
+    text-shadow: 0 0 24px rgba(77,155,253,0.16), 0 10px 30px rgba(0,0,0,0.35);
+  }
+  .hero-title > span { color:var(--white); }
+  .hero-title > span > span { color:var(--blue); text-shadow: 0 0 14px rgba(77,155,253,0.45); }
+  .hero-desc {
+    position:relative; max-width:600px;
+    font-size:15.5px; color:var(--white-dim);
+    line-height:1.8; margin-bottom:36px;
+    font-family:'EB Garamond',Georgia,serif;
+    margin-left:auto; margin-right:auto;
+  }
+  .hero-trust {
+    position:relative; display:flex; gap:22px; flex-wrap:wrap; justify-content:center;
+    font-family:'Orbitron',sans-serif; font-size:9.5px; letter-spacing:1px;
+    color:var(--white-dim); text-transform:uppercase;
+  }
+  .hero-trust span { display:flex; align-items:center; gap:7px; }
+  .hero-trust svg { width:15px; height:15px; color:var(--blue); flex-shrink:0; }
+
+  /* ——— CATEGORY TABS ——— */
+  .cat-tabs-wrap { position:relative; z-index:1; background:var(--bg2); padding:44px 80px 0; text-align:center; }
+  .cat-tabs {
+    display:inline-flex; gap:6px; padding:5px;
+    background:var(--white-faint); border:1px solid var(--border);
+    border-radius:9px; margin-bottom:44px;
+  }
+  .cat-tab {
+    font-family:'Orbitron',sans-serif; font-size:10.5px; font-weight:700;
+    letter-spacing:1.5px; text-transform:uppercase;
+    padding:10px 22px; border-radius:6px; border:none;
+    background:transparent; color:var(--white-dim);
+    cursor:pointer; transition:all 0.25s;
+  }
+  .cat-tab.active { background:var(--blue); color:var(--bg); }
+  .cat-tab:not(.active):hover { color:var(--white); background:rgba(77,155,253,0.08); }
+
+  /* ——— PRODUCT GRID ——— */
+  .products { position:relative; z-index:1; background:var(--bg2); padding:0 80px 88px; }
+  .product-grid {
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:22px;
+    max-width:1480px; margin:0 auto;
+  }
+  @media(max-width:1180px){ .product-grid { grid-template-columns:repeat(3, 1fr); } }
+  @media(max-width:860px){ .product-grid { grid-template-columns:repeat(2, 1fr); } }
+  @media(max-width:540px){ .product-grid { grid-template-columns:1fr; } }
+
+  .product-card {
+    display:flex; flex-direction:column;
+    padding:18px 18px 20px;
+    opacity:0; transform:translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, box-shadow 0.3s;
+  }
+  .product-card.hidden-cat { display:none; }
+  .product-card-link { display:contents; text-decoration:none; color:inherit; }
+
+  .product-visual {
+    position:relative; aspect-ratio:1/1;
+    background: linear-gradient(135deg, rgba(77,155,253,0.18) 0%, rgba(77,155,253,0.04) 100%);
+    border:1px solid rgba(77,155,253,0.28);
+    border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden; margin-bottom:16px;
+  }
+  .product-visual::before {
+    content:'';
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(77,155,253,0.16), transparent 60%);
+  }
+  .product-visual svg { position:relative; width:42%; height:42%; color:var(--blue); }
+  .product-brand-tag {
+    position:absolute; top:9px; left:9px;
+    font-family:'Orbitron',sans-serif; font-size:8.5px; font-weight:700;
+    letter-spacing:1px; text-transform:uppercase;
+    color:var(--blue); background:rgba(10,23,40,0.75);
+    border:1px solid rgba(77,155,253,0.4);
+    border-radius:4px; padding:3px 6px;
+  }
+
+  .product-name {
+    font-family:'Noto Sans Georgian',sans-serif;
+    font-size:14px; font-weight:700; color:var(--white);
+    margin-bottom:4px; line-height:1.35;
+  }
+  .product-tag {
+    font-size:11.5px; color:var(--white-dim);
+    font-family:'EB Garamond',Georgia,serif;
+    margin-bottom:14px;
+  }
+  .product-card-foot {
+    margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:10px;
+  }
+  .price.pc { font-size:17px; }
+  .add-mini {
+    display:flex; align-items:center; justify-content:center;
+    width:36px; height:36px; border-radius:8px; flex-shrink:0;
+    background:var(--accent); color:var(--bg); border:1px solid var(--accent);
+    cursor:pointer; transition:box-shadow 0.3s, transform 0.2s;
+  }
+  .add-mini:hover { box-shadow:0 0 16px rgba(255,149,0,0.5); }
+  .add-mini:active { transform:scale(0.92); }
+  .add-mini svg { width:16px; height:16px; }
+
+  @media(max-width:900px){ .hero,.cat-tabs-wrap,.products { padding-left:24px; padding-right:24px; } }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="lang-bar" id="langBar">
+  <div class="lang-bar-logo-wrap">
+    <a href="index.html" class="lang-bar-logo" aria-label="MOKRI SHOP - მთავარი">MOK<span>RI</span></a>
+    <span class="shop-badge">SHOP</span>
+  </div>
+  <nav class="header-nav" id="mainNav" aria-label="მთავარი ნავიგაცია">
+    <a href="index.html" class="header-nav-link active" data-nav="shop">
+      <span data-lang="ka" class="active">მთავარი</span>
+      <span data-lang="en">Shop</span>
+      <span data-lang="ru">Магазин</span>
+    </a>
+    <a href="index.html?cat=yubikey" class="header-nav-link" data-nav="cat-yubikey">
+      <span data-lang="ka" class="active">YubiKey</span>
+      <span data-lang="en">YubiKey</span>
+      <span data-lang="ru">YubiKey</span>
+    </a>
+    <a href="index.html?cat=ugreen" class="header-nav-link" data-nav="cat-ugreen">
+      <span data-lang="ka" class="active">Ugreen</span>
+      <span data-lang="en">Ugreen</span>
+      <span data-lang="ru">Ugreen</span>
+    </a>
+    <a href="https://mokri.ge/" class="header-nav-link back-link" aria-label="mokri.ge">
+      <span>← mokri.ge</span>
+    </a>
+  </nav>
+  <div class="header-right">
+    <div class="lang-switcher" role="group" aria-label="ენის არჩევა">
+      <button class="lang-btn active" type="button" data-lang-set="ka" aria-label="ქართული" aria-pressed="true">ქარ</button>
+      <button class="lang-btn" type="button" data-lang-set="en" aria-label="English" aria-pressed="false">ENG</button>
+      <button class="lang-btn" type="button" data-lang-set="ru" aria-label="Русский" aria-pressed="false">РУС</button>
+    </div>
+    <a href="cart.html" class="nav-cart" aria-label="კალათა">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+      </svg>
+      <span class="nav-cart-badge" id="cartBadge">0</span>
+    </a>
+    <button class="nav-toggle" type="button" id="navToggle" aria-controls="mainNav" aria-expanded="false" aria-label="მენიუ">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</header>
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+<!-- ——— FLOATING CALL ——— -->
+<a href="tel:+995555555555" class="float-btn call-float" title="Call" aria-label="Call +995 555 55 55 55">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+  </svg>
+</a>
+
+<!-- ——— FLOATING WHATSAPP ——— -->
+<a href="https://wa.me/995555555555" target="_blank" rel="noopener noreferrer" class="float-btn wa-float" title="WhatsApp" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ——— FLOATING MESSENGER ——— -->
+<a href="https://m.me/mokri" target="_blank" rel="noopener noreferrer" class="float-btn msng-float" title="Messenger" aria-label="Messenger">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.617 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.193 14.963l-3.056-3.259-5.963 3.259 6.559-6.963 3.13 3.259 5.889-3.259-6.559 6.963z"/>
+  </svg>
+</a>
+
+<!-- ——— FLOATING EMAIL ——— -->
+<a href="mailto:shop@mokri.ge" class="float-btn email-float" title="Email" aria-label="Email">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </svg>
+</a>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-eyebrow">
+    <span data-lang="ka" class="active">MOKRI SHOP</span>
+    <span data-lang="en">MOKRI SHOP</span>
+    <span data-lang="ru">MOKRI SHOP</span>
+  </div>
+  <h1 class="hero-title">
+    <span data-lang="ka" class="active">უსაფრთხოება და აქსესუარები<br><span>ორიგინალი</span> ბრენდებისგან</span>
+    <span data-lang="en">Security & accessories<br>from <span>original</span> brands</span>
+    <span data-lang="ru">Безопасность и аксессуары<br>от <span>оригинальных</span> брендов</span>
+  </h1>
+  <p class="hero-desc">
+    <span data-lang="ka" class="active">YubiKey უსაფრთხოების გასაღებები და Ugreen-ის აქსესუარები — ორიგინალი, გარანტიით, სწრაფი მიწოდებით მთელ საქართველოში.</span>
+    <span data-lang="en">YubiKey security keys and Ugreen accessories — genuine, with warranty, fast delivery across Georgia.</span>
+    <span data-lang="ru">Ключи безопасности YubiKey и аксессуары Ugreen — оригинал, с гарантией, быстрая доставка по всей Грузии.</span>
+  </p>
+  <div class="hero-trust">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg><span data-lang="ka" class="active">100% ორიგინალი</span><span data-lang="en">100% Genuine</span><span data-lang="ru">100% Оригинал</span></span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span data-lang="ka" class="active">ოფიციალური გარანტია</span><span data-lang="en">Official Warranty</span><span data-lang="ru">Официальная гарантия</span></span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h13v13H3zM16 8h4l3 4v4h-7V8z"/><circle cx="7" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg><span data-lang="ka" class="active">მიწოდება საქართველოში</span><span data-lang="en">Delivery in Georgia</span><span data-lang="ru">Доставка по Грузии</span></span>
+  </div>
+</section>
+
+<!-- CATEGORY TABS + PRODUCTS -->
+<div class="cat-tabs-wrap">
+  <div class="cat-tabs" role="group" aria-label="კატეგორია">
+    <button type="button" class="cat-tab active" data-cat="all">
+      <span data-lang="ka" class="active">ყველა</span><span data-lang="en">All</span><span data-lang="ru">Все</span>
+    </button>
+    <button type="button" class="cat-tab" data-cat="yubikey">YubiKey</button>
+    <button type="button" class="cat-tab" data-cat="ugreen">Ugreen</button>
+  </div>
+</div>
+<section class="products">
+  <div class="product-grid" id="productGrid">
+      <div class="product-card glow-card reveal" data-cat="yubikey">
+        <a href="product-yubikey-5-nfc.html" class="product-card-link">
+          <div class="product-visual">
+            <span class="product-brand-tag"><span data-lang="ka" class="active">YubiKey</span><span data-lang="en">YubiKey</span><span data-lang="ru">YubiKey</span></span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="6" y="18" width="30" height="12" rx="6"/><circle cx="15" cy="24" r="3" fill="currentColor" stroke="none"/><path d="M36 20v8M41 22v4"/></svg>
+          </div>
+          <div class="product-name"><span data-lang="ka" class="active">YubiKey 5 NFC</span><span data-lang="en">YubiKey 5 NFC</span><span data-lang="ru">YubiKey 5 NFC</span></div>
+          <div class="product-tag"><span data-lang="ka" class="active">USB-A + NFC</span><span data-lang="en">USB-A + NFC</span><span data-lang="ru">USB-A + NFC</span></div>
+        </a>
+        <div class="product-card-foot">
+          <span class="price pc">149 ₾</span>
+          <button type="button" class="add-mini" data-add="yubikey-5-nfc" aria-label="დამატება კალათაში">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="product-card glow-card reveal" data-cat="yubikey">
+        <a href="product-yubikey-5c-nfc.html" class="product-card-link">
+          <div class="product-visual">
+            <span class="product-brand-tag"><span data-lang="ka" class="active">YubiKey</span><span data-lang="en">YubiKey</span><span data-lang="ru">YubiKey</span></span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="6" y="18" width="30" height="12" rx="6"/><circle cx="15" cy="24" r="3" fill="currentColor" stroke="none"/><path d="M36 20v8M41 22v4"/></svg>
+          </div>
+          <div class="product-name"><span data-lang="ka" class="active">YubiKey 5C NFC</span><span data-lang="en">YubiKey 5C NFC</span><span data-lang="ru">YubiKey 5C NFC</span></div>
+          <div class="product-tag"><span data-lang="ka" class="active">USB-C + NFC</span><span data-lang="en">USB-C + NFC</span><span data-lang="ru">USB-C + NFC</span></div>
+        </a>
+        <div class="product-card-foot">
+          <span class="price pc">159 ₾</span>
+          <button type="button" class="add-mini" data-add="yubikey-5c-nfc" aria-label="დამატება კალათაში">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="product-card glow-card reveal" data-cat="yubikey">
+        <a href="product-yubikey-5ci.html" class="product-card-link">
+          <div class="product-visual">
+            <span class="product-brand-tag"><span data-lang="ka" class="active">YubiKey</span><span data-lang="en">YubiKey</span><span data-lang="ru">YubiKey</span></span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="6" y="18" width="30" height="12" rx="6"/><circle cx="15" cy="24" r="3" fill="currentColor" stroke="none"/><path d="M36 20v8M41 22v4"/></svg>
+          </div>
+          <div class="product-name"><span data-lang="ka" class="active">YubiKey 5Ci</span><span data-lang="en">YubiKey 5Ci</span><span data-lang="ru">YubiKey 5Ci</span></div>
+          <div class="product-tag"><span data-lang="ka" class="active">USB-C + Lightning</span><span data-lang="en">USB-C + Lightning</span><span data-lang="ru">USB-C + Lightning</span></div>
+        </a>
+        <div class="product-card-foot">
+          <span class="price pc">199 ₾</span>
+          <button type="button" class="add-mini" data-add="yubikey-5ci" aria-label="დამატება კალათაში">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="product-card glow-card reveal" data-cat="yubikey">
+        <a href="product-yubikey-bio.html" class="product-card-link">
+          <div class="product-visual">
+            <span class="product-brand-tag"><span data-lang="ka" class="active">YubiKey</span><span data-lang="en">YubiKey</span><span data-lang="ru">YubiKey</span></span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="6" y="18" width="26" height="12" rx="6"/><circle cx="15" cy="24" r="3" fill="currentColor" stroke="none"/><path d="M32 20v8M37 22v4"/><path d="M22 15.5a3 3 0 013-3" opacity="0.55"/></svg>
+          </div>
+          <div class="product-name"><span data-lang="ka" class="active">YubiKey Bio</span><span data-lang="en">YubiKey Bio</span><span data-lang="ru">YubiKey Bio</span></div>
+          <div class="product-tag"><span data-lang="ka" class="active">FIDO Edition · თითის ანაბეჭდი</span><span data-lang="en">FIDO Edition · Fingerprint</span><span data-lang="ru">FIDO Edition · Отпечаток</span></div>
+        </a>
+        <div class="product-card-foot">
+          <span class="price pc">239 ₾</span>
+          <button type="button" class="add-mini" data-add="yubikey-bio" aria-label="დამატება კალათაში">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="product-card glow-card reveal" data-cat="ugreen">
+        <a href="product-ugreen-65w-charger.html" class="product-card-link">
+          <div class="product-visual">
+            <span class="product-brand-tag"><span data-lang="ka" class="active">Ugreen</span><span data-lang="en">Ugreen</span><span data-lang="ru">Ugreen</span></span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="12" y="8" width="24" height="30" rx="5"/><path d="M20 8V4M28 8V4"/><rect x="19" y="19" width="10" height="8" rx="1.5"/></svg>
+          </div>
+          <div class="product-name"><span data-lang="ka" class="active">Ugreen Nexode 65W GaN დამტენი</span><span data-lang="en">Ugreen Nexode 65W GaN Charger</span><span data-lang="ru">Ugreen Nexode 65W GaN Зарядка</span></div>
+          <div class="product-tag"><span data-lang="ka" class="active">3 პორტი · GaN</span><span data-lang="en">3 Ports · GaN</span><span data-lang="ru">3 порта · GaN</span></div>
+        </a>
+        <div class="product-card-foot">
+          <span class="price pc">99 ₾</span>
+          <button type="button" class="add-mini" data-add="ugreen-65w-charger" aria-label="დამატება კალათაში">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="product-card glow-card reveal" data-cat="ugreen">
+        <a href="product-ugreen-6in1-hub.html" class="product-card-link">
+          <div class="product-visual">
+            <span class="product-brand-tag"><span data-lang="ka" class="active">Ugreen</span><span data-lang="en">Ugreen</span><span data-lang="ru">Ugreen</span></span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="7" y="16" width="34" height="16" rx="4"/><path d="M3 21h4M3 27h4M41 19h4M41 29h4"/><circle cx="14" cy="24" r="1.6" fill="currentColor" stroke="none"/><circle cx="21" cy="24" r="1.6" fill="currentColor" stroke="none"/><circle cx="28" cy="24" r="1.6" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div class="product-name"><span data-lang="ka" class="active">Ugreen 6-in-1 USB-C ჰაბი</span><span data-lang="en">Ugreen 6-in-1 USB-C Hub</span><span data-lang="ru">Ugreen 6-в-1 USB-C Хаб</span></div>
+          <div class="product-tag"><span data-lang="ka" class="active">HDMI 4K · USB 3.0 · SD/TF</span><span data-lang="en">4K HDMI · USB 3.0 · SD/TF</span><span data-lang="ru">4K HDMI · USB 3.0 · SD/TF</span></div>
+        </a>
+        <div class="product-card-foot">
+          <span class="price pc">89 ₾</span>
+          <button type="button" class="add-mini" data-add="ugreen-6in1-hub" aria-label="დამატება კალათაში">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="product-card glow-card reveal" data-cat="ugreen">
+        <a href="product-ugreen-wireless-charger.html" class="product-card-link">
+          <div class="product-visual">
+            <span class="product-brand-tag"><span data-lang="ka" class="active">Ugreen</span><span data-lang="en">Ugreen</span><span data-lang="ru">Ugreen</span></span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="16" y="4" width="16" height="27" rx="4"/><path d="M9 39a15 15 0 0130 0"/><path d="M14.5 39a9.5 9.5 0 0119 0" opacity="0.55"/></svg>
+          </div>
+          <div class="product-name"><span data-lang="ka" class="active">Ugreen უსადენო დამტენი 15W</span><span data-lang="en">Ugreen 15W Wireless Charger</span><span data-lang="ru">Ugreen Беспроводная зарядка 15W</span></div>
+          <div class="product-tag"><span data-lang="ka" class="active">MagSafe თავსებადი</span><span data-lang="en">MagSafe Compatible</span><span data-lang="ru">Совместимо с MagSafe</span></div>
+        </a>
+        <div class="product-card-foot">
+          <span class="price pc">69 ₾</span>
+          <button type="button" class="add-mini" data-add="ugreen-wireless-charger" aria-label="დამატება კალათაში">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="product-card glow-card reveal" data-cat="ugreen">
+        <a href="product-ugreen-powerbank-20000.html" class="product-card-link">
+          <div class="product-visual">
+            <span class="product-brand-tag"><span data-lang="ka" class="active">Ugreen</span><span data-lang="en">Ugreen</span><span data-lang="ru">Ugreen</span></span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="11" y="9" width="22" height="30" rx="5"/><path d="M33 19h4v8h-4"/><path d="M25 15l-6.5 10h6l-6.5 10" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="product-name"><span data-lang="ka" class="active">Ugreen 20000mAh 100W პორტატული დამტენი</span><span data-lang="en">Ugreen 20000mAh 100W Power Bank</span><span data-lang="ru">Ugreen 20000mAh 100W Powerbank</span></div>
+          <div class="product-tag"><span data-lang="ka" class="active">100W PD · დისპლეით</span><span data-lang="en">100W PD · Display</span><span data-lang="ru">100W PD · Дисплей</span></div>
+        </a>
+        <div class="product-card-foot">
+          <span class="price pc">139 ₾</span>
+          <button type="button" class="add-mini" data-add="ugreen-powerbank-20000" aria-label="დამატება კალათაში">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-payments">
+    <span class="footer-payment-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>საქართველოს ბანკი</span>
+    <span class="footer-payment-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>TBC ბანკი</span>
+    <span class="footer-payment-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Liberty ბანკი</span>
+    <span class="footer-payment-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8.5c-.6-.8-1.6-1.3-2.7-1.3-1.9 0-3.4 1.6-3.4 3.5 0 .5.1.9.3 1.3-1.7.2-3 .8-3 2.3 0 1.7 2.2 2.7 5.8 2.7s5.8-1 5.8-2.7c0-1.1-.8-1.8-1.9-2.2"/></svg>Apple Pay</span>
+    <span class="footer-payment-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Google Pay</span>
+  </div>
+  <div class="footer-social">
+    <a href="https://facebook.com/mokri" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+    </a>
+    <a href="https://instagram.com/mokri" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.326-2.633 1.301-3.608C4.509 2.489 5.776 2.225 7.142 2.163 8.408 2.105 8.788 2.163 12 2.163zm0-2.163C8.741 0 8.333.013 7.053.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.053.013 8.333 0 8.741 0 12c0 3.259.013 3.667.072 4.947.085 1.856.601 3.698 1.942 5.039 1.341 1.341 3.183 1.857 5.039 1.942C8.333 23.987 8.741 24 12 24s3.667-.013 4.947-.072c1.856-.085 3.698-.601 5.039-1.942 1.341-1.341 1.857-3.183 1.942-5.039.059-1.28.072-1.688.072-4.947 0-3.259-.013-3.667-.072-4.947-.085-1.856-.601-3.698-1.942-5.039C20.645.673 18.803.157 16.947.072 15.667.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://t.me/mokri" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </a>
+  </div>
+  <p class="footer-copy">
+    <span data-lang="ka" class="active">© 2026 MOKRI SHOP · IT აქსესუარები საქართველოში</span>
+    <span data-lang="en">© 2026 MOKRI SHOP · IT accessories in Georgia</span>
+    <span data-lang="ru">© 2026 MOKRI SHOP · IT-аксессуары в Грузии</span>
+  </p>
+</footer>
+
+<script>
+'use strict';
+var currentLang = 'ka';
+
+function sanitizeInput(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;')
+    .slice(0, 2000);
+}
+
+/* ——— Cart core (shared across every shop page) ——— */
+var CART_KEY = 'mokri-shop-cart';
+function safeGet(key) { try { return localStorage.getItem(key); } catch(e) { return null; } }
+function safeSet(key, val) { try { localStorage.setItem(key, val); } catch(e) {} }
+
+function getCart() {
+  try {
+    var raw = safeGet(CART_KEY);
+    var cart = raw ? JSON.parse(raw) : {};
+    return (cart && typeof cart === 'object') ? cart : {};
+  } catch(e) { return {}; }
+}
+function setCart(cart) { safeSet(CART_KEY, JSON.stringify(cart)); updateCartBadge(); }
+function cartCount(cart) {
+  cart = cart || getCart();
+  var n = 0;
+  for (var id in cart) { if (cart.hasOwnProperty(id)) n += cart[id]; }
+  return n;
+}
+function addToCart(id, qty) {
+  qty = qty || 1;
+  var cart = getCart();
+  cart[id] = (cart[id] || 0) + qty;
+  setCart(cart);
+  return cart;
+}
+function setCartQty(id, qty) {
+  var cart = getCart();
+  if (qty <= 0) { delete cart[id]; } else { cart[id] = qty; }
+  setCart(cart);
+  return cart;
+}
+function removeFromCart(id) {
+  var cart = getCart();
+  delete cart[id];
+  setCart(cart);
+  return cart;
+}
+function updateCartBadge() {
+  var badge = document.getElementById('cartBadge');
+  if (!badge) return;
+  var n = cartCount();
+  badge.textContent = n > 99 ? '99+' : String(n);
+  badge.classList.toggle('show', n > 0);
+}
+
+(function() {
+  var ALLOWED_LANGS = ['ka','en','ru'];
+
+  function setLang(lang) {
+    if (!ALLOWED_LANGS.includes(lang)) return;
+    currentLang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function(el) {
+      el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      var isActive = btn.getAttribute('data-lang-set') === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+    document.documentElement.lang = lang;
+    safeSet('mokri-lang', lang);
+    if (typeof onLangChange === 'function') onLangChange(lang);
+  }
+
+  var saved = safeGet('mokri-lang');
+  if (saved && ALLOWED_LANGS.includes(saved)) setLang(saved);
+  else currentLang = 'ka';
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('[data-lang-set]');
+    if (!btn) return;
+    var lang = btn.getAttribute('data-lang-set');
+    if (ALLOWED_LANGS.includes(lang)) setLang(lang);
+  });
+
+  window.mokriSetLang = setLang;
+
+  /* ——— Mobile nav toggle ——— */
+  (function() {
+    var bar = document.getElementById('langBar');
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('mainNav');
+    var backdrop = document.getElementById('navBackdrop');
+    if (!bar || !toggle || !nav) return;
+
+    function openNav() {
+      bar.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('nav-open');
+    }
+    function closeNav() {
+      bar.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    }
+    function isOpen() { return bar.classList.contains('is-open'); }
+
+    toggle.addEventListener('click', function() { if (isOpen()) closeNav(); else openNav(); });
+    if (backdrop) backdrop.addEventListener('click', closeNav);
+    nav.addEventListener('click', function(e) { if (e.target.closest('a')) closeNav(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && isOpen()) closeNav(); });
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() { if (window.innerWidth > 900 && isOpen()) closeNav(); }, 100);
+    });
+  })();
+
+  updateCartBadge();
+
+  /* ——— IntersectionObserver for card animations ——— */
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+})();
+
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var wanted = params.get('cat');
+
+  function applyFilter(cat) {
+    document.querySelectorAll('.cat-tab').forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
+    });
+    document.querySelectorAll('.product-card').forEach(function(card) {
+      var show = (cat === 'all') || (card.getAttribute('data-cat') === cat);
+      card.classList.toggle('hidden-cat', !show);
+    });
+  }
+
+  var initial = (wanted === 'yubikey' || wanted === 'ugreen') ? wanted : 'all';
+  applyFilter(initial);
+
+  document.querySelectorAll('.cat-tab').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var cat = btn.getAttribute('data-cat');
+      applyFilter(cat);
+      var url = new URL(window.location.href);
+      if (cat === 'all') url.searchParams.delete('cat'); else url.searchParams.set('cat', cat);
+      window.history.replaceState({}, '', url);
+    });
+  });
+
+  document.querySelectorAll('[data-add]').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      addToCart(btn.getAttribute('data-add'), 1);
+      var original = btn.innerHTML;
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
+      setTimeout(function() { btn.innerHTML = original; }, 900);
+    });
+  });
+})();
+</script>
+</body>
+</html>
